@@ -17,7 +17,7 @@ def extract_text_from_pdf(file):
 
 
 #loading models
-@st.cache_data
+@st.cache_resource
 def load_models():
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
@@ -73,4 +73,5 @@ if uploaded_file:
             st.write(f"**Label:** {classification['label']}")
             st.write(f"**Confidence:** {classification['score']:.2f}")
 else:
+
     st.info("👆 Please upload a PDF to begin.")
