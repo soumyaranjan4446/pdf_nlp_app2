@@ -1,0 +1,6 @@
+streamlit
+transformers
+torch
+PyPDF2
+sentencepiece
+huggingface_hub
